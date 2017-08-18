@@ -3,9 +3,6 @@
     <% @cocktails.each do |c| %>
     <div class="col-xs-6">
       <h2><%= c.name %></h2>
-      <% c.ingredients.each do |i| %>
-      <p><%= i.name %></p>
-      <% end %>
       <%= link_to "Details", cocktail_path(c), class: "btn btn-primary" %>
       <%= link_to "Delete", cocktail_path(c), method: :delete, class: "btn btn-danger" %>
     </div>

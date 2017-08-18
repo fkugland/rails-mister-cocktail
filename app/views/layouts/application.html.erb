@@ -11,8 +11,14 @@
   </head>
 
   <body>
-    <div class="navbar-wagon">
+    <div class="navbar">
+      <%= link_to root_path, class: "cocktail-brand" do %>
+      <%= image_tag "cocktail-logo-schwarz.png" %>
+      <% end %>
       <h1>Cocktails of Last Night</h1>
+    </div>
+
+    <div class="home-page-banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= image_path "cocktail-banner" %>');">
     </div>
       <%= yield %>
   </body>
