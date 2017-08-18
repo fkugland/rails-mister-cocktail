@@ -9,9 +9,9 @@
 require 'open-uri'
 require 'json'
 
-# Cocktail.destroy.all
-# Ingredient.destroy.all
-# Dose.destroy.all
+Cocktail.destroy.all
+Ingredient.destroy.all
+Dose.destroy.all
 
 filepath = 'http://www.thecocktaildb.com/api/json/v1/1/list.php?i=list'
 ingredients_all = open(filepath).read
