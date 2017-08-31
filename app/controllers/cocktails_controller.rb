@@ -24,7 +24,7 @@ class CocktailsController < ApplicationController
 
   def update        # PATCH /restaurants/:id
     @cocktail = Cocktail.find(params[:id])
-    @cocktial.update(params_cocktail)
+    @cocktail.update(params_cocktail)
     redirect_to cocktail_path(@cocktail)
   end
 
@@ -35,6 +35,6 @@ class CocktailsController < ApplicationController
   end
 
   def params_cocktail
-    params.require(:cocktail).permit(:name)
+    params.require(:cocktail).permit(:name, :photo)
   end
 end

@@ -5,6 +5,10 @@
         <%= link_to "Back to overview", cocktails_path, class: "btn btn-primary btn-show" %>
       </div>
     </div>
+  <% if @cocktail.photo? %>
+      <%= cl_image_tag @cocktail.photo.path, width: 200, height: 300, crop: :fill %>
+    <% end %>
+
   <div class="row">
     <div class="cocktail-info">
       <h2><%= @cocktail.name %></h2>
@@ -21,6 +25,10 @@
     <%= f.association :ingredient, label: false, placeholder: "ingredient", :wrapper_html => { :class => 'col-xs-6 ingredient-dropdown' } %>
       <%= f.input :description, label: false, placeholder: "description", :wrapper_html => { :class => 'col-xs-3' } %>
       <%= f.button :submit, class: "btn btn-primary col-xs-3" %>
+    <% end %>
+    <%= simple_form_for(@cocktail) do |f| %>
+      <%= f.input :photo, as: :attachinary %>
+      <%= f.submit "Add photo", class: "btn btn-primary" %>
     <% end %>
   </div>
 </div>
